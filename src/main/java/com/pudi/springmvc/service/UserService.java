@@ -1,14 +1,13 @@
 package com.pudi.springmvc.service;
 
 import com.pudi.springmvc.model.User;
-import com.pudi.springmvc.repository.UserRepository;
+import com.pudi.springmvc.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Service
 @Transactional

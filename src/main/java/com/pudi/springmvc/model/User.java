@@ -1,16 +1,14 @@
 package com.pudi.springmvc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User
 {
     @Id
     @GeneratedValue
-    private long Id;
+    private long id;
     @Column
     private String firstName;
     @Column
@@ -19,16 +17,27 @@ public class User
     private String email;
     @Column
     private String password;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Task> task;
 
+    public List<Task> getTask()
+    {
+        return task;
+    }
+
+    public void setTask(List<Task> task)
+    {
+        this.task = task;
+    }
 
     public long getId()
     {
-        return Id;
+        return id;
     }
 
     public void setId(long id)
     {
-        Id = id;
+        id = id;
     }
 
     public String getFirstName()

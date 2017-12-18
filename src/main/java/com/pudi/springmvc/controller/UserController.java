@@ -32,7 +32,6 @@ public class UserController
         return userService.createUser(user);
     }
 
-    @ResponseBody
     @DeleteMapping("/user/{id}")
     public void deleteUser(@PathVariable("id") Long uid)
     {

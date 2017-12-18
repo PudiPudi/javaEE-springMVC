@@ -1,4 +1,4 @@
-package com.pudi.springmvc.repository;
+package com.pudi.springmvc.model;
 
 import com.pudi.springmvc.model.User;
 import org.springframework.data.repository.CrudRepository;
