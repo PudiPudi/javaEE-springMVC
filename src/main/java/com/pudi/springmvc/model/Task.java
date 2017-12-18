@@ -1,5 +1,7 @@
 package com.pudi.springmvc.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -19,9 +21,9 @@ public class Task
     @Column
     private Priority priority;
     @Column
-    private Date dueAt;
+    private Date dueDate;
     @Column
-    private Date createdAt;
+    private Date createDate;
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     private User author;
@@ -66,24 +68,24 @@ public class Task
         this.priority = priority;
     }
 
-    public Date getDueAt()
+    public Date getDueDate()
     {
-        return dueAt;
+        return dueDate;
     }
 
-    public void setDueAt(Date dueAt)
+    public void setDueDate(Date dueDate)
     {
-        this.dueAt = dueAt;
+        this.dueDate = dueDate;
     }
 
-    public Date getCreatedAt()
+    public Date getCreateDate()
     {
-        return createdAt;
+        return createDate;
     }
 
-    public void setCreatedAt(Date createdAt)
+    public void setCreateDate(Date createDate)
     {
-        this.createdAt = createdAt;
+        this.createDate = createDate;
     }
 
     public User getAuthor()

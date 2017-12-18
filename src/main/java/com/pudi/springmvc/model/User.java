@@ -1,5 +1,7 @@
 package com.pudi.springmvc.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,18 +19,6 @@ public class User
     private String email;
     @Column
     private String password;
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private List<Task> task;
-
-    public List<Task> getTask()
-    {
-        return task;
-    }
-
-    public void setTask(List<Task> task)
-    {
-        this.task = task;
-    }
 
     public long getId()
     {
